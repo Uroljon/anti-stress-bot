@@ -11,7 +11,10 @@ bot.on("message", async (data) => {
             [
                 { text: "🎲" },
                 { text: "🎯" },
-                { text: "🎳" }
+                { text: "🎳" },
+                { text: "⚽️" },
+                { text: "🏀" },
+                { text: "🎰" }
             ]
         ],
         resize_keyboard: true
@@ -39,7 +42,11 @@ bot.on("message", async (data) => {
         } catch (error) {
             console.log(error);
         }
+    }else{
+        bot.sendMessage(data.from.id, `Men bilan omadingizni sinab ko'ring. Birorta tugmani tanlang 👇🏻`, {
+            reply_markup: keyboard
+        })
     }
-    console.log(data);
+    // console.log(data);
 })
 
