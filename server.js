@@ -40,6 +40,6 @@ bot.on("message", async (data) => {
             console.log(error);
         }
     }
-    // console.log(data);
+    console.log(data);
 })
 
