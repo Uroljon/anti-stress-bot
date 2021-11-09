@@ -12,6 +12,8 @@ bot.on("message", async (data) => {
                 { text: "🎲" },
                 { text: "🎯" },
                 { text: "🎳" },
+            ],
+            [
                 { text: "⚽️" },
                 { text: "🏀" },
                 { text: "🎰" }
@@ -20,7 +22,7 @@ bot.on("message", async (data) => {
         resize_keyboard: true
     }
     if (data.text?.match(/(salom)/gi)) {
-        bot.sendMessage(data.from.id, `Salom, ${data.from.username}. Qanday o'yin o'ynaymiz?`, {
+        bot.sendMessage(data.from.id, `Salom, ${data.from.username}. Men bilan omadingizni sinab ko'ring. Birorta tugmani tanlang 👇🏻`, {
             reply_markup: keyboard
         })
     }
@@ -37,15 +39,11 @@ bot.on("message", async (data) => {
                 bot.sendMessage(data.from.id, winMessage, {
                     reply_markup: keyboard,
                 })
-            }, 3000)
+            }, 3500)
 
         } catch (error) {
             console.log(error);
         }
-    }else{
-        bot.sendMessage(data.from.id, `Men bilan omadingizni sinab ko'ring. Birorta tugmani tanlang 👇🏻`, {
-            reply_markup: keyboard
-        })
     }
     // console.log(data);
 })
