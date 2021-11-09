@@ -1,5 +1,14 @@
 const TelegramBot = require("node-telegram-bot-api")
 const { TOKEN } = require("./config")
+const express = require("express")
+const app = express()
+
+app.get("/", (req, res)=>{
+    res.status(200).json({
+        ok: true,
+        message: "Server ishlayapti-ku"
+    })
+})
 
 const bot = new TelegramBot(TOKEN, {
     polling: true
@@ -52,3 +61,4 @@ bot.on("message", async (data) => {
     // console.log(data);
 })
 
+app.listen(8080, ()=>console.log("server started"))
