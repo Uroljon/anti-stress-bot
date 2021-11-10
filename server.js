@@ -49,7 +49,7 @@ bot.on("message", async (data) => {
             reply_markup: keyboard
         })
     }
-    console.log(data);
+    // console.log(data);
 })
 
 bot.sendMessage(1296799837, "Server online !")
